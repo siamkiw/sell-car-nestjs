@@ -1,5 +1,5 @@
 import { Controller, Post, Body, Get, Param, Query, Delete, Patch, NotFoundException, Session, UseGuards } from '@nestjs/common';
-import { Serialize } from 'src/interceptors/serialize.interceptor';
+import { Serialize } from '../interceptors/serialize.interceptor';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
 import { UserDto } from './dtos/user.dto';
@@ -48,7 +48,7 @@ export class UsersController {
     }
 
     @Get('/:id')
-    async findUers(@Param('id') id: string) {
+    async findUser(@Param('id') id: string) {
         const user = await this.usersService.findOne(parseInt(id))
         if (!user) {
             throw new NotFoundException('user not found')
