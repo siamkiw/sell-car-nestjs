@@ -52,7 +52,6 @@ const cookieSession = require('cookie-session')
 export class AppModule {
   // run on every comming request middleware
   configure(consumer: MiddlewareConsumer) {
-
     consumer
       .apply(
         cookieSession({
