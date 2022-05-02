@@ -17,11 +17,11 @@ export class UsersService {
         if(!id){
             return null
         }
-        return await this.repo.findOneBy({id})
+        return await this.repo.findOne({id})
     }
 
     async find(email: string){
-        return await this.repo.findBy({email})
+        return await this.repo.find({email})
     }
 
     async update(id: number, attrs: Partial<User>){

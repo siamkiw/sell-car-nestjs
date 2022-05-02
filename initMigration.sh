@@ -1,0 +1,1 @@
+npm run typeorm migration:generate -- -n initial-schena -o

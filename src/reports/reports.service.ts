@@ -32,7 +32,7 @@ export class ReportsService {
     }
 
     async updateApproved(reportId: number, approved: boolean) {
-        const report = await this.repo.findOneBy({ id: reportId })
+        const report = await this.repo.findOne({ id: reportId })
         if (!report) {
             throw new NotFoundException('report not found')
         }
